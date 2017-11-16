@@ -6,12 +6,30 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-item>
+    <ion-label color="primary" stacked>Search movie database</ion-label>
+    <ion-input type="text" (input)="searchForMovie($event, searchKey)"></ion-input>
+  </ion-item>
+
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+    <ion-item *ngFor="let movie of movies" (click)="selectMovie($event, movie)">
+      <!--<ion-avatar item-left>-->
+        <!--<img src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}"/>-->
+      <!--</ion-avatar>-->
+      <!--<h2>{{movie.original_title}}</h2>-->
+      <p class="item-description">{{movie.hello}}</p>
     </ion-item>
   </ion-list>
 </ion-content>
+
+<!--<ion-content>-->
+  <!--<ion-list>-->
+    <!--<ion-list-header>Follow us on Twitter</ion-list-header>-->
+    <!--<ion-item>-->
+      <!--<ion-icon name="ionic" item-start></ion-icon>-->
+      <!--@ionicframework-->
+    <!--</ion-item>-->
+    <!--<ion-input type="text" (input)="searchForMovie($event, searchKey)"></ion-input>-->
+  <!--</ion-list>-->
+<!--</ion-content>-->

@@ -2,5 +2,13 @@
   "name": "foxhunt0",
   "app_id": "048b3c9d",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/flask",
+      "proxyUrl": "http://localhost:7777"
+    }
+  ]
 }
