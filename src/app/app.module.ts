@@ -13,39 +13,42 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
 // DeviceOrientationCompassHeading is an interface for compass
-import {DeviceOrientation} from '@ionic-native/device-orientation';
-// import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation';
+// import {DeviceOrientation} from '@ionic-native/device-orientation';
+import {DeviceOrientation, DeviceOrientationCompassHeading} from '@ionic-native/device-orientation';
 import {MovieService} from "../services/rest/movie-service";
+
+// import {dev} from '@ionic/app-scripts/config/webpack.config.js';
 
 // constructor(private deviceOrientation: DeviceOrientation) { }
 
-import {Pro} from '@ionic/pro';
+// import {Pro} from '@ionic/pro';
+//
+// const IONIC_APP_ID = dev.process.env.IONIC_APP_ID;
+// const APP_VERSION = "0.0.1";
+// const IonicPro = Pro.init(IONIC_APP_ID, {
+//   appVersion: APP_VERSION
+// });
 
-
-const IonicPro = Pro.init('APP_ID', {
-  appVersion: "APP_VERSION"
-});
-
-@Injectable()
-export class MyErrorHandler implements ErrorHandler {
-  ionicErrorHandler: IonicErrorHandler;
-
-  constructor(injector: Injector) {
-    try {
-      this.ionicErrorHandler = injector.get(IonicErrorHandler);
-    } catch (e) {
-      // Unable to get the IonicErrorHandler provider, ensure
-      // IonicErrorHandler has been added to the providers list below
-    }
-  }
-
-  handleError(err: any): void {
-    IonicPro.monitoring.handleNewError(err);
-    // Remove this if you want to disable Ionic's auto exception handling
-    // in development mode.
-    this.ionicErrorHandler && this.ionicErrorHandler.handleError(err);
-  }
-}
+// @Injectable()
+// export class MyErrorHandler implements ErrorHandler {
+//   ionicErrorHandler: IonicErrorHandler;
+//
+//   constructor(injector: Injector) {
+//     try {
+//       this.ionicErrorHandler = injector.get(IonicErrorHandler);
+//     } catch (e) {
+//       // Unable to get the IonicErrorHandler provider, ensure
+//       // IonicErrorHandler has been added to the providers list below
+//     }
+//   }
+//
+//   handleError(err: any): void {
+//     IonicPro.monitoring.handleNewError(err);
+//     // Remove this if you want to disable Ionic's auto exception handling
+//     // in development mode.
+//     this.ionicErrorHandler && this.ionicErrorHandler.handleError(err);
+//   }
+// }
 
 @NgModule({
   declarations: [
@@ -74,7 +77,7 @@ export class MyErrorHandler implements ErrorHandler {
     DeviceOrientation,
     MovieService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    [{provide: ErrorHandler, useClass: MyErrorHandler}]
+    // [{provide: ErrorHandler, useClass: MyErrorHandler}]
   ]
 })
 export class AppModule {

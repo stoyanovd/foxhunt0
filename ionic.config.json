@@ -7,8 +7,8 @@
   },
   "proxies": [
     {
-      "path": "/flask",
-      "proxyUrl": "http://localhost:7777"
+            "path": "/flask",
+            "proxyUrl": "https://foxhunt-server.herokuapp.com/"
     }
   ]
 }

@@ -84,4 +84,5 @@
     <plugin name="cordova-plugin-device-orientation" spec="^1.0.7" />
     <engine name="android" spec="~6.3.0" />
     <engine name="ios" spec="~4.5.3" />
+    <plugin name="cordova-plugin-geolocation" spec="^3.0.0" />
 </widget>

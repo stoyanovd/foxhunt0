@@ -11,6 +11,7 @@ export class MovieService {
 
   searchMovies(movieName) {
     const url = 'http://localhost:8100/flask';
+    // const url = 'https://foxhunt-server.herokuapp.com/';
     var response = this.http.get(url).map(res => res.json());
     return response;
   }

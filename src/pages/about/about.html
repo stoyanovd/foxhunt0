@@ -1,11 +1,81 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <ion-title>
-      About
+      Game
     </ion-title>
+    <!--<ion-buttons end>-->
+    <!--<button ion-button icon-only (click)="addItem()">-->
+    <!--<ion-icon name="add-circle"></ion-icon>-->
+    <!--</button>-->
+    <!--</ion-buttons>-->
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-row>
+        <!--<ion-col col-1>-->
+        <!--</ion-col>-->
+
+        <ion-col col-6 align-self-center align-items-center justify-content-center>
+          Select game
+        </ion-col>
+        <!--<ion-col col-1>-->
+        <!--</ion-col>-->
+        <ion-col col-5>
+          <ion-buttons end>
+            <button ion-button (click)="addItem()">
+              <ion-icon name="refresh">  Refresh</ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col col-1>
+        </ion-col>
+
+      </ion-row>
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item *ngFor="let item of maps" (click)="selectItem(item)">{{item.title}}
+        <ion-thumbnail item-start>
+          <img src="img/thumbnail-totoro.png">
+        </ion-thumbnail>
+        <h2>{{item.params.shortname}}</h2>
+        <p>{{item.params.title}}</p>
+        <button ion-button clear item-end>Select</button>
+      </ion-item>
+    </ion-list>
+
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <p *ngIf=" cur_map == null"> None selected </p>
+      <p *ngIf=" cur_map != null"> Select: {{cur_map.params.title}} </p>
+    </ion-card-header>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="play"></ion-icon>
+          <div>Start</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="close"></ion-icon>
+          <div>End</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          Foxes:
+        </ion-note>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
 
 </ion-content>
