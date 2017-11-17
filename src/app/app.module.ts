@@ -16,6 +16,8 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 // import {DeviceOrientation} from '@ionic-native/device-orientation';
 import {DeviceOrientation, DeviceOrientationCompassHeading} from '@ionic-native/device-orientation';
 import {MovieService} from "../services/rest/movie-service";
+import { Data } from '../providers/data/data';
+import {IonicStorageModule} from "@ionic/storage";
 
 // import {dev} from '@ionic/app-scripts/config/webpack.config.js';
 
@@ -61,7 +63,8 @@ import {MovieService} from "../services/rest/movie-service";
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -77,6 +80,7 @@ import {MovieService} from "../services/rest/movie-service";
     DeviceOrientation,
     MovieService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Data,
     // [{provide: ErrorHandler, useClass: MyErrorHandler}]
   ]
 })

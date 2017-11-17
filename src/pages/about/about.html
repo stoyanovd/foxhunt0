@@ -26,7 +26,7 @@
         <!--</ion-col>-->
         <ion-col col-5>
           <ion-buttons end>
-            <button ion-button (click)="addItem()">
+            <button ion-button (click)="presentLoading()">
               <ion-icon name="refresh">  Refresh</ion-icon>
             </button>
           </ion-buttons>
@@ -75,6 +75,11 @@
         </ion-note>
       </ion-col>
     </ion-row>
+
+    <ion-row>
+    <p>Here:{{cur_meta}}</p>
+    </ion-row>
+
 
   </ion-card>
 
